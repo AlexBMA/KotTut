@@ -9,17 +9,29 @@ package problem.pack.one
 
  */
 
-fun main(args: Array<String>): Unit {
+fun main(args: Array<String>) {
 
     var seconds = 7384
-
+    convertSecondsToHoursMinutesAndSeconds(seconds)
+    convertHoursMinutesAndSecondsToSeconds(1, 3, 4)
 }
 
-fun convert(seconds: Int) {
+fun convertSecondsToHoursMinutesAndSeconds(seconds: Int) {
 
-    if (seconds > 3600) println("Hours: ${seconds / 3600}")
+    print("$seconds seconds equals: ")
+    if (seconds > 3600) print("Hours: ${seconds / 3600} ")
 
-    var temp = seconds - ((seconds / 3600) * 3600)
+    var minutes = seconds - ((seconds / 3600) * 3600)
 
-    if (temp > 60) println("Minutes")
+    if (minutes > 60) print("Minutes: ${minutes / 60} ")
+
+    var sec = minutes - ((minutes / 60) * 60)
+
+    println("Seconds: $sec")
 }
+
+fun convertHoursMinutesAndSecondsToSeconds(hours: Int, minutes: Int, seconds: Int) {
+    var result = seconds + 60 * minutes + 3600 * hours
+    println("$hours hours $minutes minutes $seconds seconds equals: $result")
+}
+

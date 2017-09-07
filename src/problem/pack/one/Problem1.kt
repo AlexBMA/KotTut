@@ -6,7 +6,7 @@ package problem.pack.one
     1 mile = 1.6;
  */
 
-fun main(args: Array<String>): Unit {
+fun main(args: Array<String>) {
 
     println(convertMilesInKm(2.0))
     println(convertKmInMiles(4.0))
