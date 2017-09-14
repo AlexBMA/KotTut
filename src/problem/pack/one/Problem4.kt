@@ -15,7 +15,7 @@ fun main(args: Array<String>) {
 fun gcdEuclid(a: Int, b: Int): Int {
     if (a == 0) return b
     if (b == 0) return a
-    
+
     if (a > b) {
         val r = a % b
         return gcdEuclid(b, r)
